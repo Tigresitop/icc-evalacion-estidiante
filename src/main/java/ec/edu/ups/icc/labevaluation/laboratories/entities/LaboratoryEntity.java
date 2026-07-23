@@ -19,10 +19,43 @@ public class LaboratoryEntity extends BaseEntity {
     @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(name="laboratory_equipment", joinColumns=@JoinColumn(name="laboratory_id"), inverseJoinColumns=@JoinColumn(name="equipment_id"))
     private Set<EquipmentEntity> equipment = new HashSet<>();
-    public String getCode(){return code;} public void setCode(String code){this.code=code;}
-    public String getName(){return name;} public void setName(String name){this.name=name;}
-    public Integer getCapacity(){return capacity;} public void setCapacity(Integer capacity){this.capacity=capacity;}
-    public boolean isActive(){return active;} public void setActive(boolean active){this.active=active;}
-    public CampusEntity getCampus(){return campus;} public void setCampus(CampusEntity campus){this.campus=campus;}
-    public Set<EquipmentEntity> getEquipment(){return equipment;} public void setEquipment(Set<EquipmentEntity> equipment){this.equipment=equipment;}
+    public String getCode() {
+        return code;
+    }
+    public void setCode(String code) {
+        this.code = code;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public Integer getCapacity() {
+        return capacity;
+    }
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
+    }
+    public boolean isActive() {
+        return active;
+    }
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+    public CampusEntity getCampus() {
+        return campus;
+    }
+    public void setCampus(CampusEntity campus) {
+        this.campus = campus;
+    }
+    public Set<EquipmentEntity> getEquipment() {
+        return equipment;
+    }
+    public void setEquipment(Set<EquipmentEntity> equipment) {
+        this.equipment = equipment;
+    }
+    
+    
+
 }

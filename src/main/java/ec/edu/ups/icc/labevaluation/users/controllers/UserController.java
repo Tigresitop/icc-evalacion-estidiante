@@ -13,6 +13,8 @@ public class UserController {
     @GetMapping("/eligible") 
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<EligibleUserDto>> findEligible() {
+
         return ResponseEntity.ok(service.findEligible());
+        
     }
 }

@@ -30,5 +30,6 @@ public class LaboratoryServiceImpl implements LaboratoryService {
     public LaboratoryResponseDto findOne(Long id) {
         return repository.findById(id).filter(lab -> !lab.isDeleted()).map(LaboratoryMapper::toResponse)
                 .orElseThrow(() -> new NotFoundException("LAB_NOT_FOUND", "Laboratory not found"));
+
     }
 }

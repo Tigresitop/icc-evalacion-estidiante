@@ -6,7 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import ec.edu.ups.icc.labevaluation.users.entities.UserEntity;
 
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
+
     Optional<UserEntity> findByEmailAndDeletedFalse(String email);
+
     Optional<UserEntity> findByIdAndActiveTrueAndDeletedFalse(Long id);
+
     List<ec.edu.ups.icc.labevaluation.users.entities.UserEntity> findByAgeGreaterThanEqualAndActiveTrueAndDeletedFalseOrderByFullNameAsc(Integer age);
+
 }

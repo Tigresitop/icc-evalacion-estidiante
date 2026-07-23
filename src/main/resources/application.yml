@@ -1,13 +1,14 @@
 server:
-  port: 8080
+  port: 8091
   servlet:
     context-path: /api
-  error:
-    include-stacktrace: never
 
 spring:
   application:
     name: ppw-lab-evaluation
+  web:
+    error:
+      include-stacktrace: never
   datasource:
     url: jdbc:h2:mem:labevaluationdb;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
     driver-class-name: org.h2.Driver
@@ -23,7 +24,7 @@ spring:
     open-in-view: false
     properties:
       hibernate:
-        format_sql: true
+        "format_sql": true
   sql:
     init:
       mode: always
@@ -41,7 +42,7 @@ management:
 
 jwt:
   secret: ${JWT_SECRET:LabEvaluationSecretKeyForHS256MustHaveAtLeastThirtyTwoBytes2026}
-  expiration: 1800000
+  expiration: 86400000
   refresh-expiration: 604800000
   issuer: ppw-lab-evaluation-api
   header: Authorization
